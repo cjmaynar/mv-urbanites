@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Mount Vernon Urbanites{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Mount Vernon Urbanites">
+    <meta name="author" content="Corey Maynard">
+
+    <link href="{{ STATIC_URL }}css/main.css" rel="stylesheet">
+
+    <!-- Use this to quickly test CSS changes in a template, 
+    then move to project.css -->
+    {% block extra_css %}{% endblock extra_css %}
+    </head>
+
+<body>
+<div id="wrapper">
+    <div id="header">
+        <h1><a href="{% url 'home' %}">Mount Vernon Urbanites</a></h1>
+        <div id="nav">
+            <ul>
+                <li><a href="">Community</a></li>
+                <li><a href="">Impact</a></li>
+                <li><a href="">Join</a></li>
+                <li><a href="">Support</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content">
+    {% block content %}
+    <p>Use this document as a way to quick start any new project.</p>
+    {% endblock content %}
+    </div>
+
+</div>
+<div id="footer">
+    <div id="footer-content">
+    <ul>
+        <li><a href="">Link</a></li>
+        <li><a href="">Link</a></li>
+        <li><a href="">Link</a></li>
+    </ul>
+    <p>&copy; 2013 Mount Vernon Urbanites</p>
+    </div>
+</div>
+
+{% block extra_js %}{% endblock extra_js %}
+</body>
+</html>
