@@ -10,23 +10,28 @@
 
 <div id="blocks">
     <div id="upcoming">
-        <h3>Upcomming Events</h3>
+        <h3>Upcoming Events</h3>
+        {% for event in events.results %}
+        {% if forloop.first %}
         <ol>
-            <li>Event Name</li>
-            <li>Event Name</li>
-            <li>Event Name</li>
-            <li>Event Name</li>
-            <li>Event Name</li>
+        {% endif %}
+        <li><a href="{{ event.event_url }}">{{ event.name }}</a></li>
+        {% if forloop.last %}
         </ol>
+        {% endif %}
+        {% endfor %}
     </div>
 
     <div id="spotlight">
         <h3>Spotlight on Kumari</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt elit nec nisl tempor ac venenatis erat auctor. Proin hendrerit, ligula ut adipiscing commodo, mauris mi convallis est, eu venenatis velit leo et ipsum. In eu quam at risus facilisis pretium. Praesent quis enim ac neque interdum scelerisque quis eu neque</p>
+        <p><a href="">Read More</a></p>
     </div>
 
-    <div id="login">
-        <h3>Login to MVU</h3>
+    <div id="stories">
+        <h3>Neighborhood Stories</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt elit nec nisl tempor ac venenatis erat auctor. Proin hendrerit, ligula ut adipiscing commodo, mauris mi convallis est, eu venenatis velit leo et ipsum. In eu quam at risus facilisis pretium. Praesent quis enim ac neque interdum scelerisque quis eu neque</p>
+        <p><a href="">Read More</a></p>
     </div>
 </div>
 {% endblock %}
