@@ -2,6 +2,9 @@
 {% load markup %}
 
 {% block content %}
+{% include "sidebar.html" %}
+
+<div id="body">
 <h2>{{ feature.name }}</h2>
 {{ feature.about | markdown }}
 
@@ -9,5 +12,6 @@
 <h3>{{ question.question }}</h3>
 {{ question.answer | markdown }}
 {% endfor %}
+</div>
 
 {% endblock %}
