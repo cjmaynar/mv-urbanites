@@ -2,13 +2,8 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
-try:
-    from local_settings import *
-except:
-    raise("Missing Local Settings")
-
 # Absolute path to Django project dir
-DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+DJANGO_ROOT = dirname(abspath(__file__))
 # Absolute path to top level project folder
 SITE_ROOT = dirname(DJANGO_ROOT)
 
@@ -155,3 +150,5 @@ LOGGING = {
         },
     }
 }
+
+from local_settings import *
