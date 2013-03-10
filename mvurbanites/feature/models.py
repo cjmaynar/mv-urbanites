@@ -12,7 +12,7 @@ class Member(models.Model):
     age = models.IntegerField()
     sex = models.CharField(max_length=1, choices=SEXES)
     bio = models.TextField()
-    interview = models.ForeignKey('Interview')
+    interview = models.ManyToManyField('Interview')
 
     def __unicode__(self):
         return self.name
@@ -22,7 +22,8 @@ class Restraunt(models.Model):
     owner = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     cusine = models.ForeignKey('Cusine')
-    interview = models.ForeignKey('Interview')
+    about = models.TextField()
+    interview = models.ManyToManyField('Interview')
 
     def __unicode__(self):
         return self.name

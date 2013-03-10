@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block content %}
+<h2>{{ feature.name }}</h2>
+{{ feature.about | markdown }}
+
+{% for question in feature.interview.all %}
+<h3>{{ question.question }}</h3>
+{{ question.answer | markdown }}
+{% endfor %}
+
+{% endblock %}

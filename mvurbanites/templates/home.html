@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markup %}
 
 {% block title %}Mount Vernon Urbanites{% endblock %}
 
@@ -23,9 +24,9 @@
     </div>
 
     <div id="spotlight">
-        <h3>Spotlight on Kumari</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt elit nec nisl tempor ac venenatis erat auctor. Proin hendrerit, ligula ut adipiscing commodo, mauris mi convallis est, eu venenatis velit leo et ipsum. In eu quam at risus facilisis pretium. Praesent quis enim ac neque interdum scelerisque quis eu neque</p>
-        <p><a href="">Read More</a></p>
+        <h3>Spotlight on {{ feature.name }}</h3>
+        {{ feature.about }}
+        <p><a href="{% url 'feature_detail' feature.id %}">Read More</a></p>
     </div>
 
     <div id="stories">
