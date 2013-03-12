@@ -35,9 +35,14 @@
     </div>
 
     <div id="stories">
-        <h3>Neighborhood Stories</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt elit nec nisl tempor ac venenatis erat auctor. Proin hendrerit, ligula ut adipiscing commodo, mauris mi convallis est, eu venenatis velit leo et ipsum. In eu quam at risus facilisis pretium. Praesent quis enim ac neque interdum scelerisque quis eu neque</p>
-        <p><a href="">Read More</a></p>
+        {% if blog.title %}
+            <h3>{{ blog.title }}</h3>
+            {{ blog.post|truncatewords:30|markdown }}
+            <p><a href="{% url 'blog_detail' blog.slug %}">Read More</a></p>
+        {% else %}
+            <h3>No Posts Yet</h3>
+            <p>No one has written a blog post yet, perhaps you should.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

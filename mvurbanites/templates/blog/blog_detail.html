@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block content %}
+
+<h2>{{ blog.name }}</h2>
+{{ feature.post | markdown }}
+
+
+{% endblock %}

@@ -1,5 +1,4 @@
 from django.db import models
-
 from django.template.defaultfilters import slugify
 
 '''There's two differnt types of things that can be featured, a Member or
