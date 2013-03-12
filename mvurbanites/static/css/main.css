@@ -124,11 +124,21 @@ h1 a {
 
 #blocks {
     border-top: 1px solid #f8b290;
+    float: left;
+    width: 100%;
 }
 
-#blocks div {
-    display: inline-block;
-    width: 310px;
-    margin: 0;
-    padding: 0;
+#blocks #upcoming {
+    float: left;
+    width: 30%;
+}
+
+#blocks #spotlight {
+    float: left;
+    width: 40%;
+}
+
+#blocks #stories {
+    float: left;
+    width: 30%;
 }
