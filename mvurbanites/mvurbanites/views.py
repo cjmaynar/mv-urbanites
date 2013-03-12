@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.generic.base import View
 
 from settings import MEETUP_KEY
-from feature.models import Restraunt, Member
+from feature.models import Feature
 
 
 class Home(View):
@@ -13,6 +13,10 @@ class Home(View):
         key = 'key=%s' % (MEETUP_KEY)
         query = '&sign=true&group_urlname=20s-30sMountVernonUrbanites'
         events = requests.get('%s%s%s' % (api, key, query))
-        feature = Restraunt.objects.order_by('?')[0]
+        
+        try:
+            feature = Feature.objects.order_by('?')[0]
+        except IndexError:
+            feature = {}
 
         return render(request, 'home.html', {'events': events.json(), 'feature': feature})

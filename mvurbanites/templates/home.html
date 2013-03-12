@@ -24,9 +24,14 @@
     </div>
 
     <div id="spotlight">
-        <h3>Spotlight on {{ feature.name }}</h3>
-        {{ feature.about }}
-        <p><a href="{% url 'feature_detail' feature.id %}">Read More</a></p>
+        {% if feature.name %}
+            <h3>Spotlight on {{ feature.name }}</h3>
+            {{ feature.about }}
+            <p><a href="{% url 'feature_detail' feature.slug %}">Read More</a></p>
+        {% else %}
+            <h3>Suggest A Feature</h3>
+            <p>Contact us to suggest a Member or Restruant to Feature.</p>
+        {% endif %}
     </div>
 
     <div id="stories">
