@@ -3,8 +3,18 @@
 
 {% block title %}Mount Vernon Urbanites{% endblock %}
 
+{% block extra_css %}
+<style type="text/css">
+    #slides { display: none; }
+</style>
+{% endblock %}
+
 {% block content %}
 <div id="slides">
+    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
     <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
 </div>
 <h2 id="tagline">Connecting Neighbors to <span id="focus">Explore</span> Mount Vernon</h2>
@@ -46,3 +56,8 @@
     </div>
 </div>
 {% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slides.min.js"></script>
+{% endblock extra_js %}

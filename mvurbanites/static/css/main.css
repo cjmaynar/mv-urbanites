@@ -104,6 +104,11 @@ a:visited { color: #0D4780; }
 /****************
  * Page specific styles
  * */
+
+#slides {
+    width: 960px;
+    height: 400px;
+}
 #tagline {
     font-size: 32px;
     text-align: center;
