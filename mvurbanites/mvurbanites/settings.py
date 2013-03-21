@@ -2,6 +2,8 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+
 # Absolute path to Django project dir
 DJANGO_ROOT = dirname(abspath(__file__))
 # Absolute path to top level project folder
@@ -90,6 +92,10 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'mvurbanites.context_processors.sections',
 )
 
 MIDDLEWARE_CLASSES = (
