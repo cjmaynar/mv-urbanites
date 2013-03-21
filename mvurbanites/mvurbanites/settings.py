@@ -122,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'feature',
     'blog',
+    'page',
 )
 
 # A sample logging configuration. The only tangible logging
