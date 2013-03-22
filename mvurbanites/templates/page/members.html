@@ -8,7 +8,7 @@
 <h2>Member Access</h2>
 {{ page.content | markdown }}
 
-<div id="support_pages">
+<div id="member-pages">
     <ul>
         {% for child in children %}
         <li><a href="{% url 'page' 'support' child.slug %}">{{ child.title }}</a></li>

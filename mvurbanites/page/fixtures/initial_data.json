@@ -184,5 +184,25 @@
             "content": "Sponsor the MVU",
             "parent": 4
         }
+    },
+    {
+        "model": "page.page",
+        "pk": 20,
+        "fields": {
+            "title": "Host",
+            "slug": "host",
+            "content": "Host an Event",
+            "parent": 4
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 21,
+        "fields": {
+            "title": "Promote",
+            "slug": "promote",
+            "content": "Promotionary Materials",
+            "parent": 4
+        }
     }
 ]

@@ -139,3 +139,25 @@ a:visited { color: #0D4780; }
     float: left;
     width: 30%;
 }
+
+/*************
+ * Community
+ * */
+
+#community-pages {
+    margin: 0 auto;
+    width: 800px;
+}
+#community-pages ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+#community-content {
+    float: right;
+    width: 500px;
+}
+
+/*********
+ * Members
+ * */

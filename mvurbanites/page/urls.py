@@ -4,5 +4,6 @@ from .views import PageDetail, PageLanding
 
 urlpatterns = patterns('',
     url(r'^(?P<slug>[\w]+)/$', PageLanding.as_view(), name='section'),
-    url(r'^(?P<category>[\w]+)/(?P<slug>[-\w]+)/', PageDetail.as_view(), name='page'),
+    url(r'^(?P<category>[\w]+)/(?P<slug>[-\w]+)/$', PageDetail.as_view(), name='page'),
+    url(r'^(?P<category>[\w]+)/(?P<section>[-\w]+)/(?P<slug>[-\w]+)/', PageDetail.as_view(), name='subsection'),
 )
