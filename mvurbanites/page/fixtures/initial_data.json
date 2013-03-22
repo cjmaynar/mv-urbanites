@@ -1,0 +1,48 @@
+[
+    {
+        "model": "page.page",
+        "pk": 1,
+        "fields": {
+            "title": "Community",
+            "slug": "community",
+            "content": "Page Content"
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 2,
+        "fields": {
+            "title": "Members",
+            "slug": "members",
+            "content": "Page Content"
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 3,
+        "fields": {
+            "title": "Impact",
+            "slug": "impact",
+            "content": "Page Content"
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 4,
+        "fields": {
+            "title": "Support",
+            "slug": "support",
+            "content": "Page Content"
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 5,
+        "fields": {
+            "title": "Join",
+            "slug": "join",
+            "content": "Page Content",
+            "parent": 1
+        }
+    }
+]
