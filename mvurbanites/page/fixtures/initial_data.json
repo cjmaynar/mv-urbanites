@@ -39,10 +39,150 @@
         "model": "page.page",
         "pk": 5,
         "fields": {
+            "title": "About",
+            "slug": "about",
+            "content": "About Mount Vernon",
+            "parent": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 6,
+        "fields": {
+            "title": "Live Here",
+            "slug": "live-here",
+            "content": "Live in Mount Vernon",
+            "parent": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 7,
+        "fields": {
+            "title": "Visit MV",
+            "slug": "vist-mv",
+            "content": "Vist Mount Vernon",
+            "parent": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 8,
+        "fields": {
+            "title": "Events in MV",
+            "slug": "events",
+            "content": "Events and Things to do in Mount Vernon",
+            "parent": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 9,
+        "fields": {
+            "title": "Local Businesses",
+            "slug": "local-businesses",
+            "content": "Businesses owned and operated in the neighborhood",
+            "parent": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 10,
+        "fields": {
+            "title": "Improvements",
+            "slug": "improvements",
+            "content": "Projects under way",
+            "parent": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 11,
+        "fields": {
+            "title": "About MVU",
+            "slug": "about-mvu",
+            "content": "About the organization",
+            "parent": 2
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 12,
+        "fields": {
+            "title": "Member Elegibility",
+            "slug": "member-elegibility",
+            "content": "What it takes to be a member",
+            "parent": 2
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 13,
+        "fields": {
+            "title": "Member Benefits",
+            "slug": "member-benefits",
+            "content": "What you get for being a member",
+            "parent": 2
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 14,
+        "fields": {
+            "title": "Resident Retension",
+            "slug": "resident-retension",
+            "content": "How the MVU Keeps People in Mount Vernon",
+            "parent": 3
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 15,
+        "fields": {
+            "title": "Supporting Local Business",
+            "slug": "local-business",
+            "content": "Patronizing local business",
+            "parent": 3
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 16,
+        "fields": {
+            "title": "Voulenteering",
+            "slug": "voulenteering",
+            "content": "Organizing neighborhood voulenteers",
+            "parent": 3
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 17,
+        "fields": {
             "title": "Join",
             "slug": "join",
-            "content": "Page Content",
-            "parent": 1
+            "content": "Join the MVU",
+            "parent": 4
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 18,
+        "fields": {
+            "title": "Donate",
+            "slug": "donate",
+            "content": "Donate to the MVU",
+            "parent": 4
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 19,
+        "fields": {
+            "title": "Sponsor",
+            "slug": "sponsor",
+            "content": "Sponsor the MVU",
+            "parent": 4
         }
     }
 ]
