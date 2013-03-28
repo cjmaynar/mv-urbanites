@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 class Page(models.Model):
     slug = models.SlugField(blank=True, editable=False)
     title = models.CharField(max_length=255)
-    parent = models.ForeignKey('self', blank=True, null=True)
+    parent = models.ForeignKey('self', related_name="children", blank=True, null=True)
     content = models.TextField()
 
     def __unicode__(self):

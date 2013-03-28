@@ -18,14 +18,16 @@ a:visited { color: #0D4780; }
 .nav {
     font-family: Verdana, Geneva, sans-serif;
     font-variant: small-caps;
-    font-size: 30px;
+    font-size: 31.5px;
     margin: 10px;
 }
-.nav a {
-    color: #a2a4a7;
-    text-decoration: none;
-}
+.nav a { color: #a2a4a7; }
 .nav a:hover { color: #000; }
+
+.nav .dropdown-menu {
+    font-size: 17.5px;
+    font-variant: normal;
+}
 
 #footer {
     background-color: #f16421;
