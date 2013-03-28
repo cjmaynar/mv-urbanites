@@ -3,61 +3,102 @@
 
 {% block title %}Mount Vernon Urbanites{% endblock %}
 
-{% block extra_css %}
-<style type="text/css">
-    #slides { display: none; }
-</style>
-{% endblock %}
+{% block extra_css %}{% endblock %}
 
 {% block content %}
-<div id="slides">
-    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
-    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
-    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
-    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
-    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
-</div>
-<h2 id="tagline">Connecting Neighbors to <span id="focus">Explore</span> Mount Vernon</h2>
+<div class="row">
+    <div class="span8">
+        <div id="promo" class="carousel slide span8">
 
-<div id="blocks">
-    <div id="upcoming">
-        <h3>Upcoming Events</h3>
-        {% for event in events.results %}
-        {% if forloop.first %}
-        <ol>
-        {% endif %}
-        <li><a href="{{ event.event_url }}">{{ event.name }}</a></li>
-        {% if forloop.last %}
-        </ol>
-        {% endif %}
-        {% endfor %}
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="lead">Connecting Neighbors to <span class="focus">Explore</span> Mount Vernon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="lead">Connecting Neighbors to <span class="focus">Improve</span> Mount Vernon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="lead">Connecting Neighbors to <span class="focus">Support</span> Mount Vernon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="lead">Connecting Neighbors to <span class="focus">Discover</span> Mount Vernon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ STATIC_URL }}img/banner1.png" alt="The Mount Vernon Urbanites" />
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="lead">Connecting Neighbors to <span class="focus">Inform</span> Mount Vernon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#promo" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#promo" data-slide="next">&rsaquo;</a>
+        </div>
     </div>
 
-    <div id="spotlight">
-        {% if feature.name %}
-            <h3>Spotlight on {{ feature.name }}</h3>
-            {{ feature.about }}
-            <p><a href="{% url 'feature_detail' feature.slug %}">Read More</a></p>
-        {% else %}
-            <h3>Suggest A Feature</h3>
-            <p>Contact us to suggest a Member or Restruant to Feature.</p>
-        {% endif %}
-    </div>
+    <div class="offset1 span3">
+        <div id="upcoming">
+            <h3>Upcoming Events</h3>
+            {% for event in events.results %}
+            {% if forloop.first %}
+            <ol>
+            {% endif %}
+            <li><a href="{{ event.event_url }}">{{ event.name }}</a></li>
+            {% if forloop.last %}
+            </ol>
+            {% endif %}
+            {% endfor %}
+        </div>
 
-    <div id="stories">
-        {% if blog.title %}
-            <h3>{{ blog.title }}</h3>
-            {{ blog.post|truncatewords:30|markdown }}
-            <p><a href="{% url 'blog_detail' blog.slug %}">Read More</a></p>
-        {% else %}
-            <h3>No Posts Yet</h3>
-            <p>No one has written a blog post yet, perhaps you should.</p>
-        {% endif %}
+        <div id="spotlight">
+            {% if feature.name %}
+                <h3>Spotlight on {{ feature.name }}</h3>
+                {{ feature.about }}
+                <p><a href="{% url 'feature_detail' feature.slug %}">Read More</a></p>
+            {% else %}
+                <h3>Suggest A Feature</h3>
+                <p>Contact us to suggest a Member or Restruant to Feature.</p>
+            {% endif %}
+        </div>
+
+        <div id="stories">
+            {% if blog.title %}
+                <h3>{{ blog.title }}</h3>
+                {{ blog.post|truncatewords:30|markdown }}
+                <p><a href="{% url 'blog_detail' blog.slug %}">Read More</a></p>
+            {% else %}
+                <h3>No Posts Yet</h3>
+                <p>No one has written a blog post yet, perhaps you should.</p>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
 
 {% block extra_js %}
 <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+<!--
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slides.min.js"></script>
+-->
 {% endblock extra_js %}

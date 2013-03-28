@@ -8,45 +8,61 @@
     <meta name="description" content="The Mount Vernon Urbanites">
     <meta name="author" content="Corey Maynard">
 
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/mvbootstrap.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/main.css" rel="stylesheet">
     {% block extra_css %}{% endblock extra_css %}
     </head>
 
 <body>
-<div id="wrapper">
-    <div id="header">
-        <h1><a href="{% url 'home' %}">Mount Vernon Urbanites</a></h1>
-        <div id="nav">
-            <ul>
-            {% cache 500 sections %}
-            {% for section in sections %}
-                <li><a href="{% url 'section' section.slug %} ">{{ section.title }}</a></li>
-            {% endfor %}
-            {% endcache %}
-            </ul>
+
+<div id="wrap">
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="logo" class="brand" href="{% url 'home' %}">Mount Vernon Urbanites</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                    {% cache 500 sections %}
+                    {% for section in sections %}
+                        <li><a href="{% url 'section' section.slug %}">{{ section.title }}</a></li>
+                    {% endfor %}
+                    {% endcache %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div id="content">
+    <div class="container">
     {% block content %}
-    <p>Use this document as a way to quick start any new project.</p>
+    <p>The actual page content belongs here</p>
     {% endblock content %}
     </div>
+
+    <div id="push"></div>
 </div>
 
-<div id="break" />
 <div id="footer">
-    <div id="footer-content">
-    <ul>
-        <li><a href="">Contact</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Other</a></li>
-    </ul>
-    <p>&copy; 2013 Mount Vernon Urbanites</p>
+    <div class="container">
+        <ul>
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+        </ul>
+        <p>&copy; 2013 Mount Vernon Urbanites</p>
     </div>
 </div>
 
 <script type="text/javascript" src="{{ STATIC_URL}}js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 {% block extra_js %}{% endblock extra_js %}
 </body>
 </html>
