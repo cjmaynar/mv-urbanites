@@ -18,11 +18,9 @@ a:visited { color: #0D4780; }
 .nav {
     font-family: Verdana, Geneva, sans-serif;
     font-variant: small-caps;
-    font-size: 24.5px;
+    font-size: 17.5px;
 }
-.nav > li {
-    margin-top: 30px;
-}
+.nav > li { margin-top: 30px; }
 .nav a { color: #a2a4a7; }
 .nav a:hover { color: #000; }
 
