@@ -8,24 +8,26 @@ a#logo {
     background: url(../img/logo.png) no-repeat;
     text-indent:-9000px;
     outline: none;
+    margin: 10px 0 -10px 0;
 }
 
 a { color: #5291ce; }
 a:hover { color: #f16421; }
 a:visited { color: #0D4780; }
 
-
 .nav {
     font-family: Verdana, Geneva, sans-serif;
     font-variant: small-caps;
-    font-size: 31.5px;
-    margin: 10px;
+    font-size: 24.5px;
+}
+.nav > li {
+    margin-top: 30px;
 }
 .nav a { color: #a2a4a7; }
 .nav a:hover { color: #000; }
 
 .nav .dropdown-menu {
-    font-size: 17.5px;
+    font-size: 14.5px;
     font-variant: normal;
 }
 
