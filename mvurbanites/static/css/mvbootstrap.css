@@ -21,14 +21,28 @@ height: 60px;
 
 /* Lastly, apply responsive CSS fixes as necessary */
 @media (max-width: 767px) {
-#footer {
-  margin-left: -20px;
-  margin-right: -20px;
-  padding-left: 20px;
-  padding-right: 20px;
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 }
+
+/* When showing the social bar, move the main nav up 20px to
+ * be flat with the top bar */
+@media (min-width: 767px) {
+    #main {
+        margin-top: -20px;
+    }
 }
 
 #wrap > .container {
-padding-top: 95px;
+padding-top: 5px;
+}
+
+/* Hack a half column for the sidebar */
+#sidebar {
+    padding-left: 40px;
+    margin-right: -40px;
 }
