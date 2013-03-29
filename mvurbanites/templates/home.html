@@ -60,20 +60,6 @@
     <div class="offset1 span3">
         <h3>Upcoming Events</h3>
         <div id="upcoming"></div>
-        <!--
-        <div id="upcoming">
-            <h3>Upcoming Events</h3>
-            {% for event in events.results %}
-            {% if forloop.first %}
-            <ol>
-            {% endif %}
-            <li><a href="{{ event.event_url }}">{{ event.name }}</a></li>
-            {% if forloop.last %}
-            </ol>
-            {% endif %}
-            {% endfor %}
-        </div>
-        -->
 
         <div id="spotlight">
             {% if feature.name %}
@@ -102,7 +88,11 @@
 
 {% block extra_js %}
 <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
-<!--
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slides.min.js"></script>
--->
+<script type="text/javascript">
+var events = [
+    {% for event in events %}
+    { Title: "{{ event.name }}", Date: new Date("{{ event.date }}")}, 
+    {% endfor %}
+];
+</script>
 {% endblock extra_js %}

@@ -48,6 +48,12 @@ a:visited { color: #0D4780; }
  * Page specific styles
  * */
 
+table.ui-datepicker-calendar tbody td.highlight > a {
+    background: #FFEB80;
+    color: #363636;
+    border: 1px solid #FFDE2E;
+}
+
 .focus {
     color: #5291ce;
 }
