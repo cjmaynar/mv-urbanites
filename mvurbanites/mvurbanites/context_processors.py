@@ -1,4 +1,4 @@
-def sections(request):
-    from page.models import Page
+from page.models import Page
 
-    return {'sections': Page.objects.filter(parent=None)}
+def sections(request):
+    return {'sections': Page.objects.filter(in_navigation=True)}

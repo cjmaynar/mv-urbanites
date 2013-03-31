@@ -3,55 +3,69 @@
         "model": "page.page",
         "pk": 1,
         "fields": {
-            "title": "About",
-            "slug": "about",
-            "content": "Page Content"
+            "title": "Home",
+            "slug": "home",
+            "content": "The Home Page"
         }
     },
     {
         "model": "page.page",
         "pk": 2,
         "fields": {
-            "title": "Community",
-            "slug": "community",
-            "content": "Page Content"
+            "title": "About",
+            "slug": "about",
+            "content": "Page Content",
+            "in_navigation": 1
         }
     },
     {
         "model": "page.page",
         "pk": 3,
         "fields": {
-            "title": "Impact",
-            "slug": "impact",
-            "content": "Page Content"
+            "title": "Community",
+            "slug": "community",
+            "content": "Page Content",
+            "in_navigation": 1
         }
     },
     {
         "model": "page.page",
         "pk": 4,
         "fields": {
-            "title": "Support",
-            "slug": "support",
-            "content": "Page Content"
+            "title": "Impact",
+            "slug": "impact",
+            "content": "Page Content",
+            "in_navigation": 1
         }
     },
     {
         "model": "page.page",
         "pk": 5,
         "fields": {
-            "title": "Members",
-            "slug": "members",
-            "content": "Page Content"
+            "title": "Support",
+            "slug": "support",
+            "content": "Page Content",
+            "in_navigation": 1
         }
     },
     {
         "model": "page.page",
         "pk": 6,
         "fields": {
+            "title": "Members",
+            "slug": "members",
+            "content": "Page Content",
+            "in_navigation": 1
+        }
+    },
+    {
+        "model": "page.page",
+        "pk": 7,
+        "fields": {
             "title": "About MVU",
             "slug": "about-mvu",
             "content": "Page Content",
-            "parent": 1
+            "parent": 2
         }
     }
 ]

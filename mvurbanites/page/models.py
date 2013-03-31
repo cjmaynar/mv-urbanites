@@ -7,6 +7,7 @@ class Page(models.Model):
     title = models.CharField(max_length=255)
     parent = models.ForeignKey('self', related_name="children", blank=True, null=True)
     content = models.TextField()
+    in_navigation = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.title
