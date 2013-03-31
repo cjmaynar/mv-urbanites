@@ -2,7 +2,22 @@
 {% load markup %}
 
 {% block content %}
-
-<h2 class="page-header">{{ page.title }}</h2>
-{{ page.content | markdown }}
+<div class="row">
+    <div class="span9 pull-right">
+    <h2 class="page-header">{{ page.title }}</h2>
+    {{ page.content | markdown }}
+    </div>
+    <div class="span3" id="sidebar">
+        <h3>{{ section.title }} Pages</h3>
+        {% for child in section.children.all %}
+        {% if forloop.first %}
+        <ul>
+        {% endif %}
+        <li><a href="{% url 'page' section.slug child.slug %}">{{ child.title }}</a></li>
+        {% if forloop.last %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

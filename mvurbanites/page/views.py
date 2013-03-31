@@ -19,5 +19,7 @@ class PageDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PageDetail, self).get_context_data(**kwargs)
-        context['feature'] = Page.objects.get(slug=self.kwargs['slug'])
+        page = Page.objects.get(slug=self.kwargs['slug'])
+        context['feature'] = page
+        context['section'] = page.parent
         return context
