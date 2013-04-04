@@ -1,4 +1,4 @@
-{% load cache %}
+{% load cache static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,9 +25,9 @@
                 <input type="text" class="search-query" placeholder="Search">
             </form>
             <ul class="nav pull-right">
-                <li><a href="http://www.meetup.com/20s-30sMountVernonUrbanites/">Meetup</a></li>
-                <li><a href="https://www.facebook.com/groups/219892651457030/">Facebook</a></li>
-                <li><a href="">Twitter</a></li>
+                <li><a href="http://www.meetup.com/20s-30sMountVernonUrbanites/"><img src="{% static "img/meetup.png" %}" title="Meetup" alt="Meetup" /></a></li>
+                <li><a href="https://www.facebook.com/groups/219892651457030/"><img src="{% static "img/facebook.png" %}" title="Facebook" alt="Facebook" /></a></li>
+                <li><a href=""><img src="{% static "img/twitter.png" %}" title="Twitter" alt="Twitter" /></a></li>
                 {% if request.user.is_authenticated %}
                 <li><a href="">Account</a></li>
                 <li><a href="">Log Out</a></li>
