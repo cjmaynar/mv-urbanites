@@ -6,6 +6,7 @@ $(function() {
         title: 'Event Information',
         closeText: 'Hide',
         width: 600,
+        maxHeight: 600,
         buttons: [{
             text: 'Close',
             class: 'btn',
@@ -42,7 +43,6 @@ $(function() {
                 i++;
             }
             if (event) {
-                console.log(event);
                 $("#event-title").html(event.Title);
                 $("#event-rsvp").attr('href', event.Url);
                 $("#event-description").html(event.Description);
