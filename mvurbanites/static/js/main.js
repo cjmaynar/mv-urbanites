@@ -1,5 +1,12 @@
 $(function() {
     $('#promo').carousel();
+    $("#meetup-dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        title: 'Event Information',
+        closeText: 'Hide',
+        width: 600
+    });
 
     $("#upcoming").datepicker({
         beforeShowDay: function(date) {
@@ -28,7 +35,11 @@ $(function() {
                 i++;
             }
             if (event) {
-                alert(event.Title);
+                console.log(event);
+                $("#event-title").html(event.Title);
+                $("#event-rsvp").attr('href', event.Url);
+                $("#event-description").html(event.Description);
+                $("#meetup-dialog").dialog('open');
             }
         }
     });

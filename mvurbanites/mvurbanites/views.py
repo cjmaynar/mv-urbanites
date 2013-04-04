@@ -26,6 +26,8 @@ class Home(View):
             tmp_event.append(event)
 
         events = tmp_event
+        import pprint
+        pprint.pprint(events)
 
         try:
             blog = Blog.objects.latest()
