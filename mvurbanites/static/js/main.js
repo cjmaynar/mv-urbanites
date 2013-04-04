@@ -5,7 +5,14 @@ $(function() {
         modal: true,
         title: 'Event Information',
         closeText: 'Hide',
-        width: 600
+        width: 600,
+        buttons: [{
+            text: 'Close',
+            class: 'btn',
+            click: function() {
+                $(this).dialog('close');
+            }
+        }]
     });
 
     $("#upcoming").datepicker({
