@@ -4,7 +4,6 @@ from django.template.defaultfilters import slugify
 class Page(models.Model):
     slug = models.SlugField(blank=True, editable=False)
     title = models.CharField(max_length=255)
-    content = models.TextField()
     parent = models.ForeignKey('self', related_name="children", blank=True, null=True)
     in_navigation = models.BooleanField(default=False)
 

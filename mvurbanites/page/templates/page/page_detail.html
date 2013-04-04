@@ -5,7 +5,9 @@
 <div class="row">
     <div class="span9 pull-right">
     <h2 class="page-header">{{ page.title }}</h2>
-    {{ page.content | markdown }}
+        {% for component in page.textcomponent_set.all %}
+        {{ component.text | markdown }}
+        {% endfor %}
     </div>
     <div class="span3" id="sidebar">
         <h3>{{ section.title }} Pages</h3>
