@@ -17,42 +17,31 @@ class Page(models.Model):
         super(Page, self).save(*args, **kwargs)
 
 
-class AbstractComponent(models.Model):
+class Component(models.Model):
     class Meta:
         ordering = ['order']
-        abstract = True
 
-    order = models.PositiveIntegerField(blank=True)
-    page = models.ForeignKey('Page')
-
-    def __unicode__(self):
-        return "Component %d" % (self.order)
-
-
-class TextComponent(AbstractComponent):
-    text = models.TextField()
-
-    def save(self, *args, **kwargs):
-        if not self.order:
-            self.order = self.page.textcomponent_set.count() + 1
-
-        super(TextComponent, self).save(*args, **kwargs)
-
-
-class ImageComponent(AbstractComponent):
     POSITIONS = (
         ('center', "Center"),
         ('left', "Left"),
         ('right', "Right"),
     )
 
+    order = models.PositiveIntegerField(blank=True)
+    page = models.ForeignKey('Page')
+    text = models.TextField()
+    '''
     image = models.ImageField(upload_to="component")
     link = models.CharField(max_length=255)
     alternate_text = models.CharField(max_length=255)
     side = models.CharField(max_length=50, choices=POSITIONS)
+    '''
+
+    def __unicode__(self):
+        return "Component %d" % (self.order)
 
     def save(self, *args, **kwargs):
         if not self.order:
-            self.order = self.page.imagecomponent_set.count() + 1
+            self.order = self.page.component_set.count() + 1
 
-        super(ImageComponent, self).save(*args, **kwargs)
+        super(Component, self).save(*args, **kwargs)

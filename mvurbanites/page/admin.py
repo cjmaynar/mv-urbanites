@@ -1,9 +1,21 @@
 from django.contrib import admin
+from django import forms
 
-from page.models import Page, TextComponent
+from page.models import Page, Component
+
+class ComponentForm(forms.ModelForm):
+    class Meta():
+        model = Component
+
+    CHOICES = (
+        ('text', 'Text'),
+        ('image', 'Image')
+    )
+    ctype = forms.ChoiceField(label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
 
 class ComponentInline(admin.StackedInline):
-    model = TextComponent
+    model = Component
+    form = ComponentForm
     extra = 0
 
 class PageAdmin(admin.ModelAdmin):

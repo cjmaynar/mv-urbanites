@@ -24,8 +24,8 @@ class Home(View):
             d = datetime.datetime.fromtimestamp(event['time'] / 1e3)
             event['date'] = "%d/%d/%d" % (d.month, d.day, d.year)
             tmp_event.append(event)
-
         events = tmp_event
+
         try:
             blog = Blog.objects.latest()
         except ObjectDoesNotExist:
