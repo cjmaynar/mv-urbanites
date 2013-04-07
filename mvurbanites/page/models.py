@@ -30,14 +30,17 @@ class Component(models.Model):
     order = models.PositiveIntegerField(blank=True)
     page = models.ForeignKey('Page')
     text = models.TextField()
-    '''
     image = models.ImageField(upload_to="component")
     link = models.CharField(max_length=255)
     alternate_text = models.CharField(max_length=255)
     side = models.CharField(max_length=50, choices=POSITIONS)
-    '''
 
     def __unicode__(self):
+        if self.id:
+            if self.text != "":
+                return "Text Component"
+            else:
+                return "Image Component"
         return "Component %d" % (self.order)
 
     def save(self, *args, **kwargs):

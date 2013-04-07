@@ -21,13 +21,23 @@ jQuery(function($) {
  * */
 (function($) {
     $(document).ready(function() {
+        $(".image").parent().parent().hide();
+        $(".text").parent().parent().hide();
         $("input[type=radio]").live('change', function(e) {
             if ($(this).attr('value') == 'text') {
-                console.log("text");
-                // Show text box, hide image fields
+                $(this).closest('.inline-related').find('.text').each(function() {
+                    $(this).parent().parent().show();
+                });
+                $(this).closest('.inline-related').find('.image').each(function() {
+                    $(this).parent().parent().hide();
+                });
             } else {
-                console.log("Image");
-                // Hide text box, show image fields
+                $(this).closest('.inline-related').find('.text').each(function() {
+                    $(this).parent().parent().hide();
+                });
+                $(this).closest('.inline-related').find('.image').each(function() {
+                    $(this).parent().parent().show();
+                });
             }
         });
     });

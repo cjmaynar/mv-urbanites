@@ -6,7 +6,11 @@
     <div class="span9 pull-right">
     <h2 class="page-header">{{ page.title }}</h2>
         {% for component in page.component_set.all %}
-        {{ component.text | markdown }}
+        {% if component.text %}
+            {{ component.text | markdown }}
+        {% else %}
+        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image-{{ component.side }}" alt="{{ component.alternate_text }}" />
+        {% endif %}
         {% endfor %}
     </div>
     <div class="span3" id="sidebar">

@@ -43,6 +43,10 @@ a:visited { color: #0D4780; }
     display: inline-block;
 }
 
+.image-left { float: left; }
+.image-right { float: right; }
+.image-center { float: left; }
+
 
 /****************
  * Home Page
