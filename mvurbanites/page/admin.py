@@ -18,13 +18,13 @@ class ComponentForm(forms.ModelForm):
         ('center', "Center"),
     )
 
-    text = forms.CharField(required=False, widget=forms.Textarea(attrs={'cols': 80, 'rows': 20, 'class': 'text'}))
+    text = forms.CharField(required=False, widget=forms.Textarea(attrs={'cols': 80, 'rows': 10, 'class': 'text'}))
     image = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'image'}))
     link = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'image'}))
     alternate_text = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'image'}))
     side = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=POSITIONS)
 
-    ctype = forms.ChoiceField(required=False, label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
+    ctype = forms.ChoiceField(label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
 
 class ComponentInline(admin.StackedInline):
     model = Component

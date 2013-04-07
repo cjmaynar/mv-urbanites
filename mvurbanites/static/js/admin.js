@@ -10,6 +10,14 @@ jQuery(function($) {
     });
     $('div.inline-related h3').css('cursor', 'move');
     $('div.inline-related').find('input[id$=order]').parent().parent('div').hide();
+
+    $('div.inline-related').find('textarea').each(function() {
+        if ($(this).val() != '' && $(this).attr('id') != 'id_component_set-__prefix__-text') {
+            $(this).parent().parent().parent().parent().find('input[type=radio]').filter('[value="text"]').click();
+        } else if ($(this).val() == '' && $(this).attr('id') != 'id_component_set-__prefix__-text') {
+            $(this).parent().parent().parent().parent().find('input[type=radio]').filter('[value="image"]').click();
+        }
+    });
 });
 
 /*
