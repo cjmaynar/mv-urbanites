@@ -1,3 +1,5 @@
+from os.path import basename
+
 from django.db import models
 from django.template.defaultfilters import slugify
 
@@ -40,7 +42,8 @@ class Component(models.Model):
             if self.text != "":
                 return "Text Component"
             else:
-                return "Image Component"
+                return "Image: %s" % (basename(self.image.path))
+
         return "Component %d" % (self.order)
 
     def save(self, *args, **kwargs):

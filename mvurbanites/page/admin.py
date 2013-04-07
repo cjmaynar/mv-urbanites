@@ -24,7 +24,7 @@ class ComponentForm(forms.ModelForm):
     alternate_text = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'image'}))
     side = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=POSITIONS)
 
-    ctype = forms.ChoiceField(label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
+    ctype = forms.ChoiceField(required=False, label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
 
 class ComponentInline(admin.StackedInline):
     model = Component
