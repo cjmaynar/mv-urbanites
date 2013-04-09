@@ -11,7 +11,7 @@
         {% if component.text %}
             {{ component.text | markdown }}
         {% else %}
-        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image-{{ component.side }}" alt="{{ component.alternate_text }}" />
+        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image {{ component.side }}" alt="{{ component.alternate_text }}" />
         {% endif %}
         {% endfor %}
     </div>

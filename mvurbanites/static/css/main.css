@@ -43,9 +43,10 @@ a:visited { color: #0D4780; }
     display: inline-block;
 }
 
-.image-left { float: left; }
-.image-right { float: right; }
-.image-center { float: left; }
+.image { padding: 5px; }
+.left { float: left; }
+.right { float: right; }
+.center { float: left; }
 
 
 /****************
