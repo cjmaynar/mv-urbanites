@@ -1,18 +1,26 @@
 from django.contrib import messages
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.views.generic import View
 
-from .models import Page
+from .models import Page, Component
 from .forms import ContactForm
 
 class SearchView(View):
     template_name = 'page/other/search.html'
 
     def get(self, *args, **kwargs):
-        return render(self.request, self.template_name, vars())
+        qstring = self.request.GET.get('q', '').strip()
 
-    def post(self, *args, **kwargs):
+        if qstring:
+            searched = True
+            results  = Component.objects.filter(
+                Q(text__icontains=qstring)
+            )
+        else:
+            searched = False
+
         return render(self.request, self.template_name, vars())
 
 class PageView(View):

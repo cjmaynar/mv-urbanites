@@ -5,7 +5,19 @@
 <div class="row">
     <div class="span12">
         <h2>Search</h2>
-        <p>Comming Soon</p>
+        {% if searched %}
+        <p>Your search for <strong>{{qstring}}</strong> returned {{results.count}} result{{results.count|pluralize}}.</p>
+        {% for result in results %}
+            {% if forloop.first %}
+            <h2>Results</h2>
+            <ul>
+            {% endif %}
+            <li><a href="{% url 'page' result.page.slug %}">{{ result.page.title }}</a></li>
+            {% if forloop.last %}
+            </ul>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
     </div>
 </div>
 {% endblock %}
