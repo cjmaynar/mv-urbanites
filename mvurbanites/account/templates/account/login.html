@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="span12">
+        <h2>Login</h2>
+        <form method="post" action="">
+            <legend>Login to an existing account</legend>
+            {% csrf_token %}
+            <ul>
+            {{ form.as_ul }}
+            </ul>
+            <div class="form-actions">
+            <p><button type="submit" class="btn bnt-primary">Login</button></p>
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
