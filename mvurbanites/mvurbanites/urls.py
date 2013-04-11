@@ -9,9 +9,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', Home.as_view(), name='home'),
-    url(r'^feature/', include('feature.urls')),
-    url(r'^blog/', include('blog.urls')),
+    url(r'^account/', include('account.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/', include('blog.urls')),
+    url(r'^feature/', include('feature.urls')),
     url(r'^', include('page.urls')),
 )
 

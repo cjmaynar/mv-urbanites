@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
-from django.views.generic import DetailView, View
+from django.views.generic import View
 
 from .models import Page
 from .forms import ContactForm

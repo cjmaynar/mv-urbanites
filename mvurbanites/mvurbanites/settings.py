@@ -126,8 +126,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.markup',
-    'feature',
+    'account',
     'blog',
+    'feature',
     'page',
 )
 
