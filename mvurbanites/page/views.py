@@ -6,6 +6,15 @@ from django.views.generic import View
 from .models import Page
 from .forms import ContactForm
 
+class SearchView(View):
+    template_name = 'page/other/search.html'
+
+    def get(self, *args, **kwargs):
+        return render(self.request, self.template_name, vars())
+
+    def post(self, *args, **kwargs):
+        return render(self.request, self.template_name, vars())
+
 class PageView(View):
     def get(self, request, *args, **kwargs):
         page = Page.objects.get(slug=self.kwargs['slug'])
