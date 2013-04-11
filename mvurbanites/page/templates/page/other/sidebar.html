@@ -1,0 +1,12 @@
+<div class="span3" id="sidebar">
+    <h3>{{ page.parent.title }} Pages</h3>
+    {% for child in page.parent.children.all %}
+    {% if forloop.first %}
+    <ul>
+    {% endif %}
+    <li><a href="{% url 'page' child.slug %}">{{ child.title }}</a></li>
+    {% if forloop.last %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+</div>

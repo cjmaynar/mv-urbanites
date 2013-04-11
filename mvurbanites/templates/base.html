@@ -60,7 +60,7 @@
                             </ul>
                             </li>
                         {% else %}
-                            <li><a href="{% url 'section' section.slug %}">{{ section.title }}</a></li>
+                            <li><a href="{% url 'page' section.slug %}">{{ section.title }}</a></li>
                         {% endif %}
                     {% endfor %}
                     </ul>
@@ -70,6 +70,16 @@
     </div>
 
     <div class="container">
+    {% if messages %}
+        <div class="span5 center" id="messages">
+            <h2>Messages</h2>
+            <ul>
+                {% for message in messages %}
+                <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
     {% block content %}
     <p>The actual page content belongs here</p>
     {% endblock content %}

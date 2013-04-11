@@ -5,8 +5,11 @@
 
 {% block content %}
 <div class="row">
-    <div class="span9 pull-right">
-    <h2 class="page-header">{{ page.title }}</h2>
+    {% if page.parent %}
+    {% include 'page/other/sidebar.html' %}
+    {% endif %}
+    <div class="{% if page.parent %}span9{% else %}span12{% endif %} pull-right">
+        <h2 class="page-header">{{ page.title }}</h2>
         {% for component in page.component_set.all %}
         {% if component.text %}
             {{ component.text | markdown }}
@@ -14,7 +17,15 @@
         <img src="{{ MEDIA_URL }}{{ component.image }}" class="image {{ component.side }}" alt="{{ component.alternate_text }}" />
         {% endif %}
         {% endfor %}
+
+        <div id="contact-form">
+        <form method="post" action="">
+            <ul>
+                {{ form.as_ul }}
+            </ul>
+            {% csrf_token %}
+            <p><input type="submit" value="Send" /></p>
+    </form>
     </div>
-    {% include 'page/sidebar.html' %}
 </div>
 {% endblock %}

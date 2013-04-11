@@ -46,8 +46,17 @@ a:visited { color: #0D4780; }
 .image { padding: 5px; }
 .left { float: left; }
 .right { float: right; }
-.center { float: left; }
+.center { 
+    float: none;
+    margin: 0 auto;
+}
 
+#messages {
+    border: 1px solid #000;
+}
+#messages h2 {
+    text-align: center;
+}
 
 /****************
  * Home Page
