@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block title %}MVU &ndash; {{ page.title }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="span9 pull-right">
+    <h2 class="page-header">{{ page.title }}</h2>
+        {% for component in page.component_set.all %}
+        {% if component.text %}
+            {{ component.text | markdown }}
+        {% else %}
+        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image {{ component.side }}" alt="{{ component.alternate_text }}" />
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% include 'page/sidebar.html' %}
+</div>
+{% endblock %}

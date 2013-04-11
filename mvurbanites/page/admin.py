@@ -38,7 +38,7 @@ class PageAdmin(admin.ModelAdmin):
         js = (
             '/static/js/jquery-1.9.1.min.js',
             '/static/js/jquery-ui-1.10.2.custom.min.js',
-            '/static/js/admin.js',
+            '/static/page/admin.js',
         )
 
 admin.site.register(Page, PageAdmin)

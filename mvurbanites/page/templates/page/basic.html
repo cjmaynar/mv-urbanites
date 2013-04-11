@@ -15,17 +15,6 @@
         {% endif %}
         {% endfor %}
     </div>
-    <div class="span3" id="sidebar">
-        <h3>{{ section.title }} Pages</h3>
-        {% for child in section.children.all %}
-        {% if forloop.first %}
-        <ul>
-        {% endif %}
-        <li><a href="{% url 'page' section.slug child.slug %}">{{ child.title }}</a></li>
-        {% if forloop.last %}
-        </ul>
-        {% endif %}
-        {% endfor %}
-    </div>
+    {% include 'page/sidebar.html' %}
 </div>
 {% endblock %}

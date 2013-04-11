@@ -52,10 +52,10 @@
                     {% for section in sections %}
                         {% if section.children.all %}
                             <li class="dropdown">
-                            <a href="{% url 'section' section.slug %}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ section.title }}</a>
+                            <a href="{% url 'page' section.slug %}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ section.title }}</a>
                             <ul class="dropdown-menu">
                             {% for child in section.children.all %}
-                            <li><a href="{% url 'page' section.slug child.slug %}">{{ child.title }}</a></li>
+                            <li><a href="{% url 'page' child.slug %}">{{ child.title }}</a></li>
                             {% endfor %}
                             </ul>
                             </li>

@@ -1,13 +1,19 @@
-from os.path import basename
+from glob import glob
+from os.path import basename, splitext
 
 from django.db import models
 from django.template.defaultfilters import slugify
 
+from settings import SITE_ROOT
+
 class Page(models.Model):
+    TEMPLATES = [(basename(t), basename(splitext(t)[0]).replace("_", " ").title()) for t in glob(SITE_ROOT + '/page/templates/page/*.html')]
+
     slug = models.SlugField(blank=True, editable=False)
     title = models.CharField(max_length=255)
+    template = models.CharField(max_length=75, choices=TEMPLATES, default='basic.html', help_text="The template to be used to render this page. When unsure, leave as Basic")
     parent = models.ForeignKey('self', related_name="children", blank=True, null=True)
-    in_navigation = models.BooleanField(default=False)
+    in_navigation = models.BooleanField(default=False, help_text="Show this page in the navigation?")
 
     def __unicode__(self):
         return self.title
