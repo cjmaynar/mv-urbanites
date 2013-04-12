@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load markup %}
 
 {% block title %}MVU &ndash; {{ page.title }}{% endblock %}
 
@@ -10,13 +9,7 @@
     {% endif %}
     <div class="{% if page.parent %}span9{% else %}span12{% endif %} pull-right">
         <h2 class="page-header">{{ page.title }}</h2>
-        {% for component in page.component_set.all %}
-        {% if component.text %}
-            {{ component.text | markdown }}
-        {% else %}
-        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image {{ component.side }}" alt="{{ component.alternate_text }}" />
-        {% endif %}
-        {% endfor %}
+        {% include 'page/other/component.html' %}
 
         <div id="contact-form">
         <form method="post" class="form-horizontal" action="">
