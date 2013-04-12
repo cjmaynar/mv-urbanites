@@ -23,7 +23,9 @@ class ComponentForm(forms.ModelForm):
     link = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'image'}))
     alternate_text = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'image'}))
     side = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=POSITIONS)
-    span = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=[(s,s) for s in range(1,8)])
+    span = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=[(s,s) for s in range(1,8)], help_text="Controls how large the image is")
+    title = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'image'}))
+
 
     ctype = forms.ChoiceField(label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
 

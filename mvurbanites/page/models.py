@@ -50,6 +50,7 @@ class Component(models.Model):
     alternate_text = models.CharField(max_length=255)
     side = models.CharField(max_length=50, choices=POSITIONS)
     span = models.SmallIntegerField(choices=[(s, s) for s in range(1, 8)], default=5)
+    title = models.CharField(max_length=255)
 
     def __unicode__(self):
         if self.id:

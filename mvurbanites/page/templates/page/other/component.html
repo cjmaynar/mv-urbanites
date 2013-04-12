@@ -6,7 +6,7 @@
         {% if component.link %}
         <a href="{{ component.link }}">
         {% endif %}
-        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image span{{ component.span }} {{ component.side }}" alt="{{ component.alternate_text }}" />
+        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image span{{ component.span }} {{ component.side }}" {% if component.title %}title="{{ component.title }}"{% endif %} alt="{{ component.alternate_text }}" />
         {% if component.link %}
         </a>
         {% endif %}
