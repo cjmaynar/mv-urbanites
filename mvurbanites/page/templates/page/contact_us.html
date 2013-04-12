@@ -22,11 +22,7 @@
         <form method="post" class="form-horizontal" action="">
             <legend>Send a Message</legend>
             {% csrf_token %}
-            {% for field in form %}
-            <div class="control-group">
-                {{ field.label_tag }} {{ field }}
-            </div>
-            {% endfor %}
+            {% include "form.html" %}
             <div class="form-actions">
             <p><input type="submit" value="Send" /></p>
             </div>

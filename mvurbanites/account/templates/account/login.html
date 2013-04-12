@@ -8,11 +8,7 @@
         <form method="post" class="form-horizontal" action="">
             <legend>Login to an existing account</legend>
             {% csrf_token %}
-            {% for field in form %}
-            <div class="control-group">
-                {{ field.label_tag }} {{ field }}
-            </div>
-            {% endfor %}
+            {% include "form.html" %}
             <div class="form-actions">
                 <p><button type="submit" class="btn bnt-primary">Login</button>
                 <a href="{% url 'join' %}" class="btn">Join</a>

@@ -11,7 +11,7 @@ from .forms import ContactForm
 class SearchView(View):
     template_name = 'page/other/search.html'
 
-    def get(self, *args, **kwargs):
+    def get(self, request,  *args, **kwargs):
         qstring = self.request.GET.get('q', '').strip()
 
         if qstring:
@@ -25,7 +25,7 @@ class SearchView(View):
         return render(self.request, self.template_name, vars())
 
 class PageView(View):
-    def get(self,*args, **kwargs):
+    def get(self, request, *args, **kwargs):
         if 'slug' not in self.kwargs:
             page = Page.objects.get(slug='home')
         else:
@@ -66,7 +66,7 @@ class PageView(View):
 
         return render(self.request, template_name, vars())
 
-    def post(self, *args, **kwargs):
+    def post(self, request,  *args, **kwargs):
         page = Page.objects.get(slug=self.kwargs['slug'])
         template_name = 'page/%s' % page.template
 
