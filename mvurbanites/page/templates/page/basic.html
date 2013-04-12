@@ -5,6 +5,9 @@
 
 {% block content %}
 <div class="row">
+    {% if page.parent %}
+    {% include 'page/other/sidebar.html' %}
+    {% endif %}
     <div class="span9 pull-right">
     <h2 class="page-header">{{ page.title }}</h2>
         {% for component in page.component_set.all %}
@@ -15,8 +18,5 @@
         {% endif %}
         {% endfor %}
     </div>
-    {% if page.parent %}
-    {% include 'page/other/sidebar.html' %}
-    {% endif %}
 </div>
 {% endblock %}

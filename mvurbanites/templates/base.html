@@ -53,7 +53,7 @@
                 <div class="nav-collapse collapse">
                     <ul id="main-nav" class="nav pull-right">
                     {% for section in sections %}
-                        {% if section.children.all %}
+                        {% if section.children.published.all %}
                             <li class="dropdown">
                             <a href="{% url 'page' section.slug %}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ section.title }}</a>
                             <ul class="dropdown-menu">

@@ -27,9 +27,9 @@ class SearchView(View):
 class PageView(View):
     def get(self, request, *args, **kwargs):
         if 'slug' not in self.kwargs:
-            page = get_object_or_404(Page, slug='home')
+            page = get_object_or_404(Page, slug='home', published=True)
         else:
-            page = get_object_or_404(Page, slug=self.kwargs['slug'])
+            page = get_object_or_404(Page, slug=self.kwargs['slug'], published=True)
 
         template_name = 'page/%s' % page.template
 

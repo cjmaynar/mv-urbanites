@@ -6,6 +6,10 @@ from django.template.defaultfilters import slugify
 
 from settings import SITE_ROOT
 
+class PageManager(models.Manager):
+    def published(self):
+        return self.get_query_set().filter(published=True)
+
 class Page(models.Model):
     TEMPLATES = [(basename(t), basename(splitext(t)[0]).replace("_", " ").title()) for t in glob(SITE_ROOT + '/page/templates/page/*.html')]
 
@@ -14,6 +18,9 @@ class Page(models.Model):
     template = models.CharField(max_length=75, choices=TEMPLATES, default='basic.html', help_text="The template to be used to render this page. When unsure, leave as Basic")
     parent = models.ForeignKey('self', related_name="children", blank=True, null=True)
     in_navigation = models.BooleanField(default=False, help_text="Show this page in the navigation?")
+    published = models.BooleanField(default=False)
+
+    objects = PageManager()
 
     def __unicode__(self):
         return self.title

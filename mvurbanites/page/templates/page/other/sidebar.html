@@ -1,8 +1,7 @@
-<div class="span3" id="sidebar">
-    <h3>{{ page.parent.title }} Pages</h3>
+<div class="span3">
     {% for child in page.parent.children.all %}
     {% if forloop.first %}
-    <ul>
+    <ul class="nav nav-list" id="side-nav">
     {% endif %}
     <li><a href="{% url 'page' child.slug %}">{{ child.title }}</a></li>
     {% if forloop.last %}
