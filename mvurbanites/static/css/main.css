@@ -70,6 +70,12 @@ a:visited { color: #0D4780; }
  * Home Page
  * */
 
+.carousel-inner img {
+    width: auto;
+    max-height: 400px;
+    overflow: hidden;
+}
+
 table.ui-datepicker-calendar tbody td.highlight > a {
     background: #FFEB80;
     color: #363636;

@@ -38,6 +38,7 @@ class PageAdmin(admin.ModelAdmin):
     model = Page
     form = PageForm
     inlines = [ComponentInline,]
+    search_fields = ['title',]
 
     class Media:
         js = (

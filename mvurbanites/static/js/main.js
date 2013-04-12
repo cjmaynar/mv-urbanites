@@ -1,5 +1,6 @@
 $(function() {
     $('#promo').carousel();
+
     $("#meetup-dialog").dialog({
         autoOpen: false,
         modal: true,

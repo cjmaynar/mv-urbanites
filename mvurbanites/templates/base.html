@@ -73,16 +73,19 @@
     </div>
 
     <div class="container">
-    {% if messages %}
-        <div class="span5 center" id="messages">
-            <h2>Messages</h2>
+    {% for message in messages %}
+        {% if forloop.first %}
+        <div class="span5 center alert alert-{{ message.tags }}" id="messages">
+            <h2>{{ message.tags.capitalize }}</h2>
             <ul>
-                {% for message in messages %}
+        {% endif %}
                 <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
+        {% if forloop.last %}
             </ul>
         </div>
-    {% endif %}
+        {% endif %}
+    {% endfor %}
+
     {% block content %}
     <p>The actual page content belongs here</p>
     {% endblock content %}
