@@ -3,7 +3,7 @@
     {% if forloop.first %}
     <ul class="nav nav-list" id="side-nav">
     {% endif %}
-    <li><a href="{% url 'page' child.slug %}">{{ child.title }}</a></li>
+    <li {% if child.slug = page.slug %}class="active"{% endif %}><a href="{% url 'page' child.slug %}"><i class="icon-chevron-right"></i> {{ child.title }}</a></li>
     {% if forloop.last %}
     </ul>
     {% endif %}

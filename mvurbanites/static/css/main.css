@@ -66,7 +66,6 @@ a#logo {
   width: 228px;
   margin: 30px 0 0;
   padding: 0;
-  background-color: #fff;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -92,6 +91,11 @@ a#logo {
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
 }
+
+#side-nav > .active > a {
+  background: #f16421;
+}
+
 #side-nav > .active > a {
   position: relative;
   z-index: 2;
@@ -101,6 +105,16 @@ a#logo {
   -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
      -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
           box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+
+#side-nav .icon-chevron-right {
+    float: right;
+    margin-top: 2px;
+    margin-right: -6px;
+    opacity: .25;
+}
+#side-nav a:hover .icon-chevron-right {
+    opacity: .5;
 }
 
 @media (min-width: 1200px) {
