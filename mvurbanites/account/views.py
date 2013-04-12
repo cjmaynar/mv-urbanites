@@ -1,4 +1,4 @@
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.views.generic.edit import FormView
@@ -37,7 +37,9 @@ class LoginView(FormView):
         
         return redirect('/')
 
-
+    def form_invalid(self, form):
+        messages.add_message(self.request, messages.ERROR, 'Invalid Form!')
+        return super(LoginView, self).form_invalid(form)
 
 class JoinView(View):
     template_name = "account/join.html"
