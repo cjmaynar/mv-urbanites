@@ -70,11 +70,12 @@ a:visited { color: #0D4780; }
  * Home Page
  * */
 
-.carousel-inner img {
-    width: auto;
-    max-height: 400px;
-    overflow: hidden;
+#promo img {
+   width:auto;
+   max-width: 770px;
+   max-height: 385px;
 }
+
 
 table.ui-datepicker-calendar tbody td.highlight > a {
     background: #FFEB80;
