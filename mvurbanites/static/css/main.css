@@ -33,6 +33,21 @@ a#logo {
     font-variant: normal;
 }
 
+/**
+ * Override the bootstrap defaults. Requires !important on all
+ * declarations here. Tisk tisk.
+ * */
+#main-nav .submenu:hover {
+  background: #f16421 !important;
+  background-image: -moz-linear-gradient(top, #f16421, #b34a18) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f16421), to(#b34a18)) !important;
+  background-image: -webkit-linear-gradient(top, #f16421, #b34a18) !important;
+  background-image: -o-linear-gradient(top, #f16421, #b34a18) !important;
+  background-image: linear-gradient(to bottom, #f16421, #b34a18) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0) !important;
+}
+
 #footer {
     background-color: #f16421;
     border-top: 2px solid #9d3a0b;
