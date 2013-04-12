@@ -31,7 +31,12 @@ class ComponentInline(admin.StackedInline):
     form = ComponentForm
     extra = 0
 
+class PageForm(forms.ModelForm):
+    parent = forms.ModelChoiceField(queryset=Page.objects.filter(parent=None), required=False)
+
 class PageAdmin(admin.ModelAdmin):
+    model = Page
+    form = PageForm
     inlines = [ComponentInline,]
 
     class Media:

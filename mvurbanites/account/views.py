@@ -8,8 +8,8 @@ from .forms import LoginForm
 class AccountView(View):
     template_name = 'account/index.html'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, template_name, vars())
+    def get(self, *args, **kwargs):
+        return render(self.request, self.template_name, vars())
 
 
 class LogoutView(View):
