@@ -11,11 +11,17 @@
     <div class="span9 pull-right">
     <h2 class="page-header">{{ page.title }}</h2>
         {% for component in page.component_set.all %}
-        {% if component.text %}
-            {{ component.text | markdown }}
-        {% else %}
-        <img src="{{ MEDIA_URL }}{{ component.image }}" class="image {{ component.side }}" alt="{{ component.alternate_text }}" />
-        {% endif %}
+            {% if component.text %}
+                {{ component.text | markdown }}
+            {% else %}
+                {% if component.link %}
+                <a href="{{ component.link }}">
+                {% endif %}
+                <img src="{{ MEDIA_URL }}{{ component.image }}" class="image span{{ component.span }} {{ component.side }}" alt="{{ component.alternate_text }}" />
+                {% if component.link %}
+                </a>
+                {% endif %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>

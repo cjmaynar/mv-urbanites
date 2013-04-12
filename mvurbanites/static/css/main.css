@@ -62,7 +62,10 @@ a#logo {
     display: inline-block;
 }
 
-.image { padding: 5px; }
+.image {
+    padding: 10px;
+    margin: 5px;
+}
 .left { float: left; }
 .right { float: right; }
 .center { 
@@ -70,12 +73,8 @@ a#logo {
     margin: 0 auto;
 }
 
-#messages {
-    border: 1px solid #000;
-}
-#messages h2 {
-    text-align: center;
-}
+#messages { border: 1px solid #000; }
+#messages h2 { text-align: center; }
 
 #side-nav {
   width: 228px;
@@ -132,6 +131,9 @@ a#logo {
     opacity: .5;
 }
 
+/*
+ * Responsive
+ * */
 @media (min-width: 1200px) {
     #side-nav {
         width: 258px;
@@ -165,9 +167,9 @@ a#logo {
  * */
 
 #promo img {
-   width:auto;
+   width:100%;
    max-width: 770px;
-   max-height: 385px;
+   max-height: 380px;
 }
 
 
