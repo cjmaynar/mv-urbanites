@@ -1,4 +1,8 @@
 jQuery(function($) {
+    /*
+     * Just handle the sortable stuff out here, as that uses the external
+     * version of jQuery to run
+     * */
     $('div.inline-group').sortable({
         items: 'div.inline-related',
         handle: 'h3:first',
@@ -9,15 +13,6 @@ jQuery(function($) {
         }
     });
     $('div.inline-related h3').css('cursor', 'move');
-    $('div.inline-related').find('input[id$=order]').parent().parent('div').hide();
-
-    $('div.inline-related').find('textarea').each(function() {
-        if ($(this).val() != '' && $(this).attr('id') != 'id_component_set-__prefix__-text') {
-            $(this).parent().parent().parent().parent().find('input[type=radio]').filter('[value="text"]').click();
-        } else if ($(this).val() == '' && $(this).attr('id') != 'id_component_set-__prefix__-text') {
-            $(this).parent().parent().parent().parent().find('input[type=radio]').filter('[value="image"]').click();
-        }
-    });
 });
 
 /*
@@ -45,6 +40,26 @@ jQuery(function($) {
                     $(this).parent().parent().show();
                 });
             }
+        });
+        $('div.inline-related').find('input[id$=order]').parent().parent('div').hide();
+
+        $('div.inline-related').each(function() {
+            var component = $(this);
+
+            if (component.attr('id') != 'component_set-empty') {
+                if (component.find('textarea').val() == '') {
+                    component.find('.image').each(function() {
+                        $(this).parent().parent().show();
+                    });
+                } else {
+                    component.find('.text').each(function() {
+                        $(this).parent().parent().show();
+                    });
+                }
+
+                component.find(".field-ctype").hide();
+            }
+
         });
     });
 }(django.jQuery));

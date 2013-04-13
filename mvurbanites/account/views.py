@@ -41,6 +41,7 @@ class LoginView(FormView):
         messages.add_message(self.request, messages.ERROR, 'Invalid Form!')
         return super(LoginView, self).form_invalid(form)
 
+
 class JoinView(View):
     template_name = "account/join.html"
 

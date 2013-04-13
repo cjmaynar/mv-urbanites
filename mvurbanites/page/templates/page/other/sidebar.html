@@ -1,5 +1,5 @@
 <div class="span3">
-    {% for child in page.parent.children.all %}
+    {% for child in page.parent.children.published.all %}
     {% if forloop.first %}
     <ul class="nav nav-list" id="side-nav">
     {% endif %}
