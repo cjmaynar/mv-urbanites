@@ -41,6 +41,9 @@ class PageAdmin(admin.ModelAdmin):
     model = Page
     form = PageForm
     inlines = [ComponentInline,]
+    list_display = ('title', 'published')
+    date_hierarchy = 'modified'
+    search_fields = ['title']
 
     class Media:
         js = (

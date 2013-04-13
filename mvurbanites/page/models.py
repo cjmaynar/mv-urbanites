@@ -14,6 +14,7 @@ class PageManager(models.Manager):
 class Page(models.Model):
     TEMPLATES = [(basename(t), basename(splitext(t)[0]).replace("_", " ").title()) for t in glob(SITE_ROOT + '/page/templates/page/*.html')]
 
+    modified = models.DateTimeField(auto_now=True)
     slug = models.SlugField(blank=True, editable=False)
     title = models.CharField(max_length=255)
     template = models.CharField(max_length=75, choices=TEMPLATES, default='basic.html', help_text="The template to be used to render this page. When unsure, leave as Basic")
