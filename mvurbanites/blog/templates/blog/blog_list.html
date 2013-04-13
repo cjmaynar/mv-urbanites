@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% include 'blog/sidebar.html' %}
+    <div class="span8">
     <h2>Blog Posts</h2>
     <ul>
     {% for blog in object_list %}
-        <li>{{ blog.title }}</li>
+        <li><a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a></li>
     {% endfor %}
     </ul>
+    </div>
 {% endblock %}

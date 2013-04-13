@@ -13,13 +13,13 @@
             <h2>Results</h2>
             <ul>
             {% endif %}
-            <li><a href="{% url 'page' result.page.slug %}">{{ result.page.title }}</a>
-            {{ result.text|markdown }}
-            </li>
+            <li><a href="{% url 'page' result.page.slug %}">{{ result.page.title }}</a></li>
             {% if forloop.last %}
             </ul>
             {% endif %}
         {% endfor %}
+        {% else %}
+        <p>Use the search field above to find content.</p>
         {% endif %}
     </div>
 </div>
