@@ -26,7 +26,7 @@ class ComponentForm(forms.ModelForm):
     side = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=POSITIONS, help_text="The position of where this image will show")
     span = forms.ChoiceField(required=False, widget=forms.Select(attrs={'class': 'image'}), choices=[(s,s) for s in range(1,8)], help_text="Controls how large the image is")
 
-    ctype = forms.ChoiceField(label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
+    ctype = forms.ChoiceField(required=False, label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
 
 class ComponentInline(admin.StackedInline):
     model = Component

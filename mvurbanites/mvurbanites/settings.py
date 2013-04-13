@@ -15,10 +15,6 @@ SITE_NAME = basename(DJANGO_ROOT)
 # project name in paths
 path.append(DJANGO_ROOT)
 
-DEBUG = False
-
-TEMPLATE_DEBUG = DEBUG
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
