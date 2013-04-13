@@ -2,6 +2,7 @@ from glob import glob
 from os.path import basename, splitext
 
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.template.defaultfilters import slugify
 
 from settings import SITE_ROOT
@@ -60,3 +61,10 @@ class Component(models.Model):
                 return "Image: %s" % (basename(self.image.path))
 
         return "Component %d" % (self.order)
+
+    def clean(self):
+        ''' Verify that the component type selection is valid '''
+        if self.text == '' and self.image == '':
+            raise ValidationError("You must pick a component type")
+        elif self.text != '' and self.image != '':
+            raise ValidationError("You can not have both types in the same component")

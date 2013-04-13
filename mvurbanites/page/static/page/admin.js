@@ -56,8 +56,12 @@ jQuery(function($) {
                         $(this).parent().parent().show();
                     });
                 }
+
                 // Hide the type picker on all existing components
-                component.find(".field-ctype").hide();
+                // if there are no errors
+                if (component.find('.errorlist').length == 0) {
+                    component.find(".field-ctype").hide();
+                }
             }
         });
     });

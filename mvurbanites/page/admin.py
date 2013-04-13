@@ -28,6 +28,7 @@ class ComponentForm(forms.ModelForm):
 
     ctype = forms.ChoiceField(required=False, label="Component Type", widget=forms.RadioSelect(), choices=CHOICES)
 
+
 class ComponentInline(admin.StackedInline):
     model = Component
     form = ComponentForm
