@@ -45,7 +45,7 @@ jQuery(function($) {
 
         $('div.inline-related').each(function() {
             var component = $(this);
-
+            component.find('textarea').css({width:'100%'});
             if (component.attr('id') != 'component_set-empty') {
                 if (component.find('textarea').val() == '') {
                     component.find('.image').each(function() {
@@ -56,10 +56,9 @@ jQuery(function($) {
                         $(this).parent().parent().show();
                     });
                 }
-
+                // Hide the type picker on all existing components
                 component.find(".field-ctype").hide();
             }
-
         });
     });
 }(django.jQuery));

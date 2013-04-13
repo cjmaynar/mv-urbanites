@@ -42,7 +42,7 @@ class Component(models.Model):
         ('right', "Right"),
     )
 
-    order = models.PositiveIntegerField(blank=True)
+    order = models.PositiveSmallIntegerField(blank=True)
     page = models.ForeignKey('Page')
     text = models.TextField()
     image = models.ImageField(upload_to="component")
@@ -60,9 +60,3 @@ class Component(models.Model):
                 return "Image: %s" % (basename(self.image.path))
 
         return "Component %d" % (self.order)
-
-    def save(self, *args, **kwargs):
-        if not self.order:
-            self.order = self.page.component_set.count() + 1
-
-        super(Component, self).save(*args, **kwargs)
