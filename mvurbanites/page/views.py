@@ -76,7 +76,7 @@ class PageView(View):
                 from django.core.mail import send_mail
 
                 #TODO: Uncomment this
-                #send_mail("Contact from mvurbanites.com", request.POST.get('message'), request.POST.get('your_email'), ['me@coreymaynard.com'])
+                #send_mail("Contact from mvurbanites.com", request.POST.get('message'), request.POST.get('your_email'), [request.POST.get('to')])
 
                 messages.add_message(self.request, messages.SUCCESS, 'Email Sent!')
             else:
