@@ -73,27 +73,21 @@
             <div id="upcoming"></div>
         </div>
 
+        {% if feature.name %}
         <div id="spotlight">
-            {% if feature.name %}
-                <h3>Spotlight on {{ feature.name }}</h3>
-                {{ feature.about }}
-                <p><a href="{% url 'feature_detail' feature.slug %}">Read More</a></p>
-            {% else %}
-                <h3>Suggest A Feature</h3>
-                <p>Contact us to suggest a Member or Restruant to Feature.</p>
-            {% endif %}
+            <h3>Spotlight on {{ feature.name }}</h3>
+            {{ feature.about|truncatewords:30|markdown }}
+            <p><a href="{% url 'feature_detail' feature.slug %}">Read More</a></p>
         </div>
+        {% endif %}
 
+        {% if blog.title %}
         <div id="stories">
-            {% if blog.title %}
-                <h3>{{ blog.title }}</h3>
-                {{ blog.post|truncatewords:30|markdown }}
-                <p><a href="{% url 'blog_detail' blog.slug %}">Read More</a></p>
-            {% else %}
-                <h3>No Posts Yet</h3>
-                <p>No one has written a blog post yet, perhaps you should.</p>
-            {% endif %}
+            <h3>{{ blog.title }}</h3>
+            {{ blog.post|truncatewords:30|markdown }}
+            <p><a href="{% url 'blog_detail' blog.slug %}">Read More</a></p>
         </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

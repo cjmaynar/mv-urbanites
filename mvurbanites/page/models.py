@@ -11,7 +11,9 @@ class PageManager(models.Manager):
     def published(self):
         return self.get_query_set().filter(published=True)
 
+
 class Page(models.Model):
+
     TEMPLATES = [(basename(t), basename(splitext(t)[0]).replace("_", " ").title()) for t in glob(SITE_ROOT + '/page/templates/page/*.html')]
 
     modified = models.DateTimeField(auto_now=True)

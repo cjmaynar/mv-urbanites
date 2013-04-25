@@ -35,8 +35,10 @@
                 {% endif %}
                 <li><a href="{% url 'logout' %}">Log Out</a></li>
                 {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'login' %}">Admin</a></li>
+                <!--
                 <li><a href="{% url 'join' %}">Join</a></li>
+                -->
                 {% endif %}
             </ul>
         </div>

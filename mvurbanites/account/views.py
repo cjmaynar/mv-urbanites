@@ -8,8 +8,8 @@ from .forms import LoginForm
 class AccountView(View):
     template_name = 'account/index.html'
 
-    def get(self, *args, **kwargs):
-        return render(self.request, self.template_name, vars())
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, vars())
 
 
 class LogoutView(View):
@@ -45,5 +45,5 @@ class LoginView(FormView):
 class JoinView(View):
     template_name = "account/join.html"
 
-    def get(self, *args, **kwargs):
-        return render(self.request, self.template_name, vars())
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, vars())

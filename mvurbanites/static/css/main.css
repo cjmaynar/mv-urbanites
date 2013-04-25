@@ -21,7 +21,7 @@ a#logo {
 #main-nav {
     font-family: Verdana, Geneva, sans-serif;
     font-variant: small-caps;
-    font-size: 17.5px;
+    font-size: 24.5px;
 }
 #main-nav > li { margin-top: 30px; }
 #main-nav a { color: #a2a4a7; }
@@ -188,6 +188,16 @@ table.ui-datepicker-calendar tbody td.highlight > a {
 
 .focus {
     color: #5291ce;
+}
+
+#event-description a {
+    outline: none;
+    color: #0088CC;
+    text-decoration: underline;
+    padding: 1px;
+}
+#event-description a:hover {
+    color: #005580;
 }
 
 
