@@ -55,7 +55,7 @@ a#logo {
 #footer p { text-align: center; }
 #footer ul {
     margin: 0 auto;
-    width: 200px;
+    width: 100px;
 }
 #footer ul li {
     display: inline-block;

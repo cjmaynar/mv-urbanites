@@ -92,6 +92,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS += (
     'mvurbanites.context_processors.sections',
+    'mvurbanites.context_processors.is_production',
 )
 
 MIDDLEWARE_CLASSES = (
