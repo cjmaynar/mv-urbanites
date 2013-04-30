@@ -13,7 +13,7 @@
             <h2>Results</h2>
             <ul>
             {% endif %}
-            <li><a href="{% url 'page' result.page.slug %}">{{ result.page.title }}</a></li>
+            <li><a href="{% url 'page' result.page.parent.slug result.page.slug %}">{{ result.page.title }}</a></li>
             {% if forloop.last %}
             </ul>
             {% endif %}

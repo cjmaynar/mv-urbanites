@@ -6,7 +6,6 @@ class ContactForm(forms.Form):
         ('john@mvurbanites.com', 'John Kernan - Finance'),
         ('dan@mvurbanites.com', 'Dan Rohn - Counsel'),
     )
-    to = forms.ChoiceField(choices=EMAILS)
-    your_name = forms.CharField()
-    your_email = forms.EmailField()
+    to = forms.ChoiceField(choices=EMAILS, help_text="Pick someone to email")
+    your_email = forms.EmailField(help_text="Please provide a valid email address")
     message = forms.CharField(widget=forms.widgets.Textarea())

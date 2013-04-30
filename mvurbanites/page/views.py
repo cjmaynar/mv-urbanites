@@ -1,8 +1,11 @@
+from random import choice
+
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
+from django.http import Http404
 from django.shortcuts import get_object_or_404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 
 from .models import Page, Component
@@ -24,8 +27,33 @@ class SearchView(View):
 
         return render(self.request, self.template_name, vars())
 
-class PageView(View):
+
+class SectionView(View):
     def get(self, request, *args, **kwargs):
+        section = get_object_or_404(Page, slug=self.kwargs['slug'], published=True)
+        try:
+            page = section.children.reverse()[0]
+        except IndexError:
+            raise Http404
+
+        return redirect('page', section=section.slug, slug=page.slug)
+
+
+
+class PageView(View):
+    SPONSORS = (
+        ('cazbar.png', 'Cazbar' 'http://cazbar.pro/cazbar/cazbar.html'),
+        ('centerstage.png', 'Center Stage', 'http://centerstage.org/'),
+        ('homeslyce.png', 'Home Slyce', 'http://www.slycethebar.com/'),
+        ('minato.png', 'Minato', 'http://www.minatosushibar.com/'),
+        ('plates.png', 'Plates', 'http://www.platesbaltimore.com/'),
+        ('redmaple.png', 'Red Maple', 'http://www.930redmaple.com/'),
+    )
+
+
+    def get(self, request, *args, **kwargs):
+        sponsor = choice(self.SPONSORS)
+
         if 'slug' not in self.kwargs:
             page = get_object_or_404(Page, id=1, published=True)
         else:
@@ -67,6 +95,8 @@ class PageView(View):
         return render(self.request, template_name, vars())
 
     def post(self, request,  *args, **kwargs):
+        sponsor = choice(self.SPONSORS)
+
         page = Page.objects.get(slug=self.kwargs['slug'])
         template_name = 'page/%s' % page.template
 

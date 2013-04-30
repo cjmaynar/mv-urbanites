@@ -26,14 +26,15 @@ class Page(models.Model):
 
     objects = PageManager()
 
+    class Meta():
+        get_latest_by = 'id'
+
     def __unicode__(self):
         return self.title
 
     def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.title)
-
-        super(Page, self).save(*args, **kwargs)
+        self.slug = slugify(self.title)
+        super(Page, self).save()
 
 
 class Component(models.Model):
@@ -71,3 +72,9 @@ class Component(models.Model):
             raise ValidationError("You must pick a component type")
         elif self.text != '' and self.image != '':
             raise ValidationError("You can not have both types in the same component")
+
+    def save(self, *args, **kwargs):
+        if not self.order:
+            self.order = 1
+
+        super(Component, self).save()

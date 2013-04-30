@@ -1,11 +1,26 @@
+{% load static %}
 <div class="span3">
     {% for child in page.parent.children.published.all %}
     {% if forloop.first %}
     <ul class="nav nav-list" id="side-nav">
     {% endif %}
-    <li {% if child.slug = page.slug %}class="active"{% endif %}><a href="{% url 'page' child.slug %}"><i class="icon-chevron-right"></i> {{ child.title }}</a></li>
+    <li {% if child.slug = page.slug %}class="active"{% endif %}><a href="{% url 'page' child.parent.slug child.slug %}"><i class="icon-chevron-right"></i> {{ child.title }}</a></li>
     {% if forloop.last %}
     </ul>
     {% endif %}
     {% endfor %}
+
+    <div id="joinup" class="well">
+    <h4>Join Us</h4>
+    <p>Join the Mount Vernon Urbanites through Meetup.</p>
+    <p><a href="http://www.meetup.com/20s-30sMountVernonUrbanites" class="btn">Join Now!</a></p>
+    </div>
+
+    <div id="sponsors" class="well">
+    <h4>Sponsors</h4>
+    <p>Thanks to our local sponsors!</p>
+    <p><a href="{{ sponsor.2 }}"><img src="{% static "img/sponsors/"|add:sponsor.0 %}" alt="{{ sponsor.1 }}" /></a></p>
+    </div>
+
 </div>
+
