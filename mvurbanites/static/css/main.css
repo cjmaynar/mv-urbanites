@@ -50,7 +50,7 @@ a#logo {
 #footer {
     background-color: #f16421;
     border-top: 2px solid #9d3a0b;
-    font-size: .8em;
+    font-size: .9em;
 }
 #footer p { text-align: center; }
 #footer ul {
@@ -59,6 +59,9 @@ a#logo {
 }
 #footer ul li {
     display: inline-block;
+}
+#footer a {
+    color: #ccc;
 }
 
 .image {
