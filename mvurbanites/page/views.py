@@ -48,6 +48,7 @@ class PageView(View):
         ('minato.png', 'Minato', 'http://www.minatosushibar.com/'),
         ('plates.png', 'Plates', 'http://www.platesbaltimore.com/'),
         ('redmaple.png', 'Red Maple', 'http://www.930redmaple.com/'),
+        ('truffles.jpg', 'Truffles Catering', 'http://www.meetmeatthebelvedere.com/'),
     )
 
 
