@@ -4,6 +4,11 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 PRODUCTION = True
 
+ADMINS = (
+    # ('Your Name', 'your_email@example.com'),
+)
+MANAGERS = ADMINS
+
 ALLOWED_HOSTS = ['mvurbanites.com', 'www.mvurbanites.com']
 
 # API key for meetup.com

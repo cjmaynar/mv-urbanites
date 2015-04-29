@@ -79,7 +79,6 @@
     {% for message in messages %}
         {% if forloop.first %}
         <div class="span5 center alert alert-{{ message.tags }}" id="messages">
-            <h2>{{ message.tags.capitalize }}</h2>
             <ul>
         {% endif %}
                 <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>

@@ -15,11 +15,6 @@ SITE_NAME = basename(DJANGO_ROOT)
 # project name in paths
 path.append(DJANGO_ROOT)
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
-
-MANAGERS = ADMINS
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

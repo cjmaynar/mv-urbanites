@@ -106,12 +106,11 @@ class PageView(View):
             if form.is_valid():
                 from django.core.mail import send_mail
 
-                #TODO: Uncomment this
-                #send_mail("Contact from mvurbanites.com", request.POST.get('message'), request.POST.get('your_email'), [request.POST.get('to')])
+                send_mail("Contact from mvurbanites.com", request.POST.get('message'), request.POST.get('your_email'), [request.POST.get('to')])
 
                 messages.add_message(self.request, messages.SUCCESS, 'Email Sent!')
             else:
-                messages.add_message(self.request, messages.ERROR, 'Invalid Form!')
+                messages.add_message(self.request, messages.ERROR, 'Invalid form, please fix the errors below.')
 
         return render(self.request, template_name, vars())
 
