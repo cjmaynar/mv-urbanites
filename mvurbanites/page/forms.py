@@ -2,8 +2,7 @@ from django import forms
 
 class ContactForm(forms.Form):
     EMAILS = (
-        ('tina@mvurbanites.com', 'Tina Dudley - Founder'),
-        ('john@mvurbanites.com', 'John Kernan - Finance'),
+        ('john@mvurbanites.com', 'John Kernan - Organizer'),
         ('dan@mvurbanites.com', 'Dan Rohn - Counsel'),
     )
     to = forms.ChoiceField(choices=EMAILS, help_text="Pick someone to email")
